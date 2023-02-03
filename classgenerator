@@ -1,0 +1,148 @@
+#!/bin/bash
+#This Script generates C++ Classes
+read -p "Please Enter Your Name: " username
+echo "Hello Mr: ${username} "
+read -p "Please Enter Your Class Name: " classname
+read -p "Do You Want a NameSpace? [Y/N]: " want
+
+
+if [ ${want} == "Y" ]
+then
+read -p " Please Enter Your NameSpace: " namespace
+echo " Your Class is ${classname} and Your NameSpace is ${namespace} "
+echo "
+#ifndef ${classname}_H
+#define ${classname}_H
+ 
+ /***********************************************************************************************
+ *                           
+ *   
+ *                          CopyRights Saved (C) ${username}                                             
+ *                                                            
+ *                                                             
+ ************************************************************************************************/
+ /*
+ Auther: ${username}
+ Date: `date -R`
+ Brief:
+ */
+namespace ${namespace}{
+ 
+class ${classname}{
+ 
+public:
+	//Class Constructors and Destructors 
+	${classname}();
+	virtual ~${classname}();
+	//Class Public Methods
+	
+	
+private:
+	//Class Private Properties and Methods 
+      
+	  
+};
+ 
+}
+#endif
+" 1> ${classname}.hpp
+
+echo "
+ /***********************************************************************************************
+ *                           
+ *   
+ *                          CopyRights Saved (C) ${username}                                             
+ *                                                            
+ *                                                             
+ ************************************************************************************************/
+ /*
+ Auther: ${username}
+ Date: `date -R`
+ Brief:
+ */
+#include \"${classname}.hpp\"
+ 
+namespace ${namespace}{
+ 
+	${classname}::${classname}(){
+       
+    }
+       
+    ${classname}::~${classname}(){
+       
+    }
+       
+}
+" 1> ${classname}.cpp
+echo "Your Class was Created Correctly..... "
+
+elif [ ${want} == "N" ]
+then
+echo "Your Class is ${classname} "
+echo "
+#ifndef ${classname}_H
+#define ${classname}_H
+ 
+ /***********************************************************************************************
+ *                           
+ *   
+ *                          CopyRights Saved (C) ${username}                                             
+ *                                                            
+ *                                                             
+ ************************************************************************************************/
+ /*
+ Auther: ${username}
+ Date: `date -R`
+ Brief:
+ */
+ 
+class ${classname}{
+ 
+public:
+	//Class Constructors and Destructors
+	${classname}();
+	virtual ~${classname}() ;
+	//Class Public Methods
+        
+		
+private:
+	//Class Private Properties and Methods 
+       
+ 
+};
+ 
+#endif
+ 
+" 1> ${classname}.hpp
+
+echo "
+ /***********************************************************************************************
+ *                           
+ *   
+ *                          CopyRights Saved (C) ${username}                                             
+ *                                                            
+ *                                                             
+ ************************************************************************************************/
+ /*
+ Auther: ${username}
+ Date: `date -R`
+ Brief:
+ */
+#include \"${classname}.hpp\"
+ 
+ 
+    ${classname}::${classname}(){
+       
+    }
+       
+    ${classname}::~${classname}(){
+       
+    }
+       
+ 
+" 1> ${classname}.cpp
+echo "Your Class was Created Correctly....."
+
+fi
+
+
