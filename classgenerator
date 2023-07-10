@@ -1,44 +1,53 @@
 #!/bin/bash
 #This Script generates C++ Classes
 read -p "Please Enter Your Name: " username
-echo "Hello Mr: ${username} "
 read -p "Please Enter Your Class Name: " classname
+read -p "Please enter the Version of the Class: " versionnumber
 read -p "Do You Want a NameSpace? [Y/N]: " want
+
 
 
 if [ ${want} == "Y" ]
 then
 read -p " Please Enter Your NameSpace: " namespace
 echo " Your Class is ${classname} and Your NameSpace is ${namespace} "
-echo "
-#ifndef ${classname}_H
+echo "#ifndef ${classname}_H
 #define ${classname}_H
- 
- /***********************************************************************************************
- *                           
- *   
- *                          CopyRights Saved (C) ${username}                                             
- *                                                            
- *                                                             
- ************************************************************************************************/
- /*
- Auther: ${username}
- Date: `date -R`
- Brief:
- */
+/************************************************************************
+* @file ${classname}_interface.hpp
+* @author Copyright (c) `date +%Y` ${username}.  All rights reserved.
+* @version V${versionnumber}   
+* @date `date -R`
+* @brief A description of the module’s purpose.
+*************************************************************************/
+
 namespace ${namespace}{
  
 class ${classname}{
- 
+
+/* ==================================================================== */
+/* ====================== Public Items of the Class =================== */
+/* ==================================================================== */
 public:
-	//Class Constructors and Destructors 
+	// Class Constructors and Destructors go here
 	${classname}();
 	virtual ~${classname}();
-	//Class Public Methods
 	
+	// Class Public Properties Methods go here
 	
+
+/* ==================================================================== */
+/* ==================== Protected Items of the Class ================== */
+/* ==================================================================== */
+protected:
+        //Class Protected Properties and Methods go here
+        
+	
+/* ==================================================================== */
+/* ===================== Private Items of the Class =================== */
+/* ==================================================================== */	
 private:
-	//Class Private Properties and Methods 
+	//Class Private Properties and Methods go here
       
 	  
 };
@@ -47,102 +56,103 @@ private:
 #endif
 " 1> ${classname}.hpp
 
-echo "
- /***********************************************************************************************
- *                           
- *   
- *                          CopyRights Saved (C) ${username}                                             
- *                                                            
- *                                                             
- ************************************************************************************************/
- /*
- Auther: ${username}
- Date: `date -R`
- Brief:
- */
+echo "/************************************************************************
+* @file ${classname}_interface.cpp
+* @author Copyright (c) `date +%Y` ${username}.  All rights reserved.
+* @version V${versionnumber}   
+* @date `date -R`
+* @brief A description of the module’s purpose.
+*************************************************************************/
+
 #include \"${classname}.hpp\"
  
 namespace ${namespace}{
+
+/* ==================================================================== */
+/* ===================== Implementation of the Class ================== */
+/* ==================================================================== */
  
-	${classname}::${classname}(){
+	${classname}::${classname}(){}
        
-    }
-       
-    ${classname}::~${classname}(){
-       
-    }
+        ${classname}::~${classname}(){}
        
 }
 " 1> ${classname}.cpp
+clear
+echo "Hello Mr: ${username} "
 echo "Your Class was Created Correctly..... "
 
 elif [ ${want} == "N" ]
 then
 echo "Your Class is ${classname} "
-echo "
-#ifndef ${classname}_H
+echo "#ifndef ${classname}_H
 #define ${classname}_H
- 
- /***********************************************************************************************
- *                           
- *   
- *                          CopyRights Saved (C) ${username}                                             
- *                                                            
- *                                                             
- ************************************************************************************************/
- /*
- Auther: ${username}
- Date: `date -R`
- Brief:
- */
+/************************************************************************
+* @file ${classname}_interface.hpp
+* @author Copyright (c) `date +%Y` ${username}.  All rights reserved.
+* @version V${versionnumber}   
+* @date `date -R`
+* @brief A description of the module’s purpose.
+*************************************************************************/
  
 class ${classname}{
  
+/* ==================================================================== */
+/* ====================== Public Items of the Class =================== */
+/* ==================================================================== */
 public:
-	//Class Constructors and Destructors
+	// Class Constructors and Destructors go here
 	${classname}();
-	virtual ~${classname}() ;
-	//Class Public Methods
+	virtual ~${classname}();
+	
+	// Class Public Properties Methods go here
+	
+
+/* ==================================================================== */
+/* ==================== Protected Items of the Class ================== */
+/* ==================================================================== */
+protected:
+        //Class Protected Properties and Methods go here
         
-		
+	
+/* ==================================================================== */
+/* ===================== Private Items of the Class =================== */
+/* ==================================================================== */	
 private:
-	//Class Private Properties and Methods 
-       
- 
+	//Class Private Properties and Methods go here
+      
+	  
 };
  
 #endif
  
 " 1> ${classname}.hpp
 
-echo "
- /***********************************************************************************************
- *                           
- *   
- *                          CopyRights Saved (C) ${username}                                             
- *                                                            
- *                                                             
- ************************************************************************************************/
- /*
- Auther: ${username}
- Date: `date -R`
- Brief:
- */
+echo "/************************************************************************
+* @file ${classname}_interface.cpp
+* @author Copyright (c) `date +%Y` ${username}.  All rights reserved.
+* @version V${versionnumber}   
+* @date `date -R`
+* @brief A description of the module’s purpose.
+*************************************************************************/
+
 #include \"${classname}.hpp\"
  
- 
-    ${classname}::${classname}(){
+/* ==================================================================== */
+/* ===================== Implementation of the Class ================== */
+/* ==================================================================== */ 
+
+    ${classname}::${classname}(){}
        
-    }
-       
-    ${classname}::~${classname}(){
-       
-    }
+    ${classname}::~${classname}(){}
        
  
 " 1> ${classname}.cpp
+clear
+echo "Hello Mr: ${username} "
 echo "Your Class was Created Correctly....."
 
 fi
+
 
 
