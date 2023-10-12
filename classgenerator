@@ -1,8 +1,8 @@
 #!/bin/bash
 #This Script generates C++ Classes
-read -p "Please Enter Your Name: " username
-read -p "Please Enter Your Class Name: " classname
-read -p "Please enter the Version of the Class: " versionnumber
+read -p "Enter Your Name: " username
+read -p "Enter Your Class Name: " classname
+read -p "Enter the Version of the Class: " versionnumber
 read -p "Do You Want a NameSpace? [Y/N]: " want
 
 
@@ -11,15 +11,18 @@ if [ ${want} == "Y" ]
 then
 read -p " Please Enter Your NameSpace: " namespace
 echo " Your Class is ${classname} and Your NameSpace is ${namespace} "
-echo "#ifndef ${classname}_H
+echo "/******************************************************************************
+* @file:    ${classname}.hpp
+* @author:  Copyright (c) `date +%Y` ${username}.  All rights reserved.
+* @license: GNU GPL version 3 or later.
+*	    This is free software: you are free to change and redistribute it.  
+*	    There is NO WARRANTY, to the extent permitted by law.
+* @version: V${versionnumber}   
+* @date:    `date -R`
+* @brief:   A description of the module’s purpose.
+*******************************************************************************/
+#ifndef ${classname}_H
 #define ${classname}_H
-/************************************************************************
-* @file ${classname}_interface.hpp
-* @author Copyright (c) `date +%Y` ${username}.  All rights reserved.
-* @version V${versionnumber}   
-* @date `date -R`
-* @brief A description of the module’s purpose.
-*************************************************************************/
 
 namespace ${namespace}{
  
@@ -56,21 +59,28 @@ private:
 #endif
 " 1> ${classname}.hpp
 
-echo "/************************************************************************
-* @file ${classname}_interface.cpp
-* @author Copyright (c) `date +%Y` ${username}.  All rights reserved.
-* @version V${versionnumber}   
-* @date `date -R`
-* @brief A description of the module’s purpose.
-*************************************************************************/
+echo "/******************************************************************************
+* @file:    ${classname}.cpp
+* @author:  Copyright (c) `date +%Y` ${username}.  All rights reserved.
+* @license: GNU GPL version 3 or later.
+*	    This is free software: you are free to change and redistribute it.  
+*	    There is NO WARRANTY, to the extent permitted by law.
+* @version: V${versionnumber}   
+* @date:    `date -R`
+* @brief:   A description of the module’s purpose.
+*******************************************************************************/
+
+/* ==================================================================== */
+/* ========================== Include Files =========================== */
+/* ==================================================================== */
 
 #include \"${classname}.hpp\"
- 
-namespace ${namespace}{
 
 /* ==================================================================== */
-/* ===================== Implementation of the Class ================== */
+/* ======================== Class Implementation ====================== */
 /* ==================================================================== */
+ 
+namespace ${namespace}{
  
 	${classname}::${classname}(){}
        
@@ -85,15 +95,18 @@ echo "Your Class was Created Correctly..... "
 elif [ ${want} == "N" ]
 then
 echo "Your Class is ${classname} "
-echo "#ifndef ${classname}_H
-#define ${classname}_H
-/************************************************************************
-* @file ${classname}_interface.hpp
-* @author Copyright (c) `date +%Y` ${username}.  All rights reserved.
+echo "/******************************************************************************
+* @file    ${classname}.hpp
+* @author  Copyright (c) `date +%Y` ${username}.  All rights reserved.
+* @license: GNU GPL version 3 or later.
+*	    This is free software: you are free to change and redistribute it.  
+*	    There is NO WARRANTY, to the extent permitted by law.
 * @version V${versionnumber}   
-* @date `date -R`
-* @brief A description of the module’s purpose.
-*************************************************************************/
+* @date    `date -R`
+* @brief   A description of the module’s purpose.
+*******************************************************************************/
+#ifndef ${classname}_H
+#define ${classname}_H
  
 class ${classname}{
  
@@ -128,18 +141,25 @@ private:
  
 " 1> ${classname}.hpp
 
-echo "/************************************************************************
-* @file ${classname}_interface.cpp
-* @author Copyright (c) `date +%Y` ${username}.  All rights reserved.
+echo "/*****************************************************************************
+* @file    ${classname}.cpp
+* @author  Copyright (c) `date +%Y` ${username}.  All rights reserved.
+* @license: GNU GPL version 3 or later.
+*	    This is free software: you are free to change and redistribute it.  
+*	    There is NO WARRANTY, to the extent permitted by law.
 * @version V${versionnumber}   
-* @date `date -R`
-* @brief A description of the module’s purpose.
-*************************************************************************/
+* @date    `date -R`
+* @brief   A description of the module’s purpose.
+******************************************************************************/
+
+/* ==================================================================== */
+/* ========================== Include Files =========================== */
+/* ==================================================================== */
 
 #include \"${classname}.hpp\"
  
 /* ==================================================================== */
-/* ===================== Implementation of the Class ================== */
+/* ======================== Class Implementation ====================== */
 /* ==================================================================== */ 
 
     ${classname}::${classname}(){}
