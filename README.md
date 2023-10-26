@@ -25,3 +25,10 @@ clone the file to any location on your machine
 2- CLASSNAME.hpp  >>> this file will contain the interface of the class
 ```
 
+## License
+```
+This library is released under the GNU GPL License ↗. Feel free to use it in your own projects, 
+modify it, and distribute it as needed. If you find any issues or have suggestions for
+improvement, please open an issue or submit a pull request.
+```
+
