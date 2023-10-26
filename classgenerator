@@ -96,14 +96,14 @@ elif [ ${want} == "N" ]
 then
 echo "Your Class is ${classname} "
 echo "/******************************************************************************
-* @file    ${classname}.hpp
-* @author  Copyright (c) `date +%Y` ${username}.  All rights reserved.
+* @file:    ${classname}.hpp
+* @author:  Copyright (c) `date +%Y` ${username}.  All rights reserved.
 * @license: GNU GPL version 3 or later.
 *	    This is free software: you are free to change and redistribute it.  
 *	    There is NO WARRANTY, to the extent permitted by law.
-* @version V${versionnumber}   
-* @date    `date -R`
-* @brief   A description of the module’s purpose.
+* @version: V${versionnumber}   
+* @date:    `date -R`
+* @brief:   A description of the module’s purpose.
 *******************************************************************************/
 #ifndef _${classname}_H
 #define _${classname}_H
@@ -142,14 +142,14 @@ private:
 " 1> ${classname}.hpp
 
 echo "/*****************************************************************************
-* @file    ${classname}.cpp
-* @author  Copyright (c) `date +%Y` ${username}.  All rights reserved.
+* @file:    ${classname}.cpp
+* @author:  Copyright (c) `date +%Y` ${username}.  All rights reserved.
 * @license: GNU GPL version 3 or later.
 *	    This is free software: you are free to change and redistribute it.  
 *	    There is NO WARRANTY, to the extent permitted by law.
-* @version V${versionnumber}   
-* @date    `date -R`
-* @brief   A description of the module’s purpose.
+* @version: V${versionnumber}   
+* @date:    `date -R`
+* @brief:   A description of the module’s purpose.
 ******************************************************************************/
 
 /* ==================================================================== */
