@@ -21,8 +21,8 @@ echo "/*************************************************************************
 * @date:    `date -R`
 * @brief:   A description of the module’s purpose.
 *******************************************************************************/
-#ifndef ${classname}_H
-#define ${classname}_H
+#ifndef _${classname}_H
+#define _${classname}_H
 
 namespace ${namespace}{
  
@@ -105,8 +105,8 @@ echo "/*************************************************************************
 * @date    `date -R`
 * @brief   A description of the module’s purpose.
 *******************************************************************************/
-#ifndef ${classname}_H
-#define ${classname}_H
+#ifndef _${classname}_H
+#define _${classname}_H
  
 class ${classname}{
  
